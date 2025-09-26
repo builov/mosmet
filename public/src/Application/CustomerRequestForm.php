@@ -7,19 +7,19 @@ use Exception;
 class CustomerRequestForm extends EmailForm
 {
     private array $fields = [
-        'your-name' => [
+        'your_name' => [
             'name' => 'your-name',
             'type' => 'string',
             'label' => 'Ваше имя',
             'value' => null
         ],
-        'your-email' => [
+        'your_email' => [
             'name' => 'your-email',
             'type' => 'email',
             'label' => 'Ваш email',
             'value' => null
         ],
-        'your-message' => [
+        'your_message' => [
             'name' => 'your-message',
             'type' => 'text',
             'label' => 'Текст сообщения',
@@ -73,7 +73,7 @@ class CustomerRequestForm extends EmailForm
     /**
      * @throws Exception
      */
-    public function process(): void      //your-name=&your-email=&your-message=
+    public function process(): void      //your_name=&your_email=&your_message=
     {
        try {
            $this->setFields();
@@ -95,12 +95,12 @@ class CustomerRequestForm extends EmailForm
 
         $this->emailer
             ->setSubject('Форма заявки')
-            ->setBody("<p>Имя: {$this->fields['your-name']['value']}</p>
-                        <p>Email: {$this->fields['your-email']['value']}</p>
-                        <p>Сообщение: {$this->fields['your-message']['value']}</p>")
-            ->setAltBody("Имя: {$this->fields['your-name']['value']}; 
-                            Email: {$this->fields['your-email']['value']}; 
-                            Сообщение: {$this->fields['your-message']['value']}");
+            ->setBody("<p>Имя: {$this->fields['your_name']['value']}</p>
+                        <p>Email: {$this->fields['your_email']['value']}</p>
+                        <p>Сообщение: {$this->fields['your_message']['value']}</p>")
+            ->setAltBody("Имя: {$this->fields['your_name']['value']}; 
+                            Email: {$this->fields['your_email']['value']}; 
+                            Сообщение: {$this->fields['your_message']['value']}");
         if ($attachment) {
             $this->emailer->setAttachment($attachment);
         }

@@ -13,9 +13,19 @@
 use Builov\Vertolet\Application\CustomerRequestForm;
 use Builov\Vertolet\Infrastructure\Emailer;
 use Builov\Vertolet\Infrastructure\Uploader;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
-require './vendor/autoload.php';
+require '../vendor/autoload.php';
 require 'config.php';
+
+/**
+ * Twig setup
+ */
+$loader = new FilesystemLoader('/var/www/project/public/templates');
+$twig = new Environment($loader, [
+    'cache' => false, // '/var/www/project/public/compilation_cache',
+]);
 
 $emailer = new Emailer();
 $uploader = new Uploader();
@@ -34,4 +44,10 @@ if (!empty($_POST)) {
 
 $form_fields = $form->getFields();
 
-require 'src/views/page.php';
+$response = $twig->render('index.html.twig', ['form_fields' => $form_fields]);
+
+header("HTTP/1.1 200 OK");
+header("Content-Type: text/html; charset=utf-8");
+print $response;
+
+//require 'src/views/page.php';
