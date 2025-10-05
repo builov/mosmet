@@ -1,0 +1,188 @@
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    height: 100vh;
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: column;
+}
+
+header .top {
+    padding: 12px;
+    font-size: 13px;
+    color: #222;
+}
+
+header .top .contact-info {
+    justify-content: space-between;
+}
+
+header .top .column-1 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    width: unset;
+    align-items: center;
+}
+
+header .top .column-1 .bi {
+    color: #ff841f;
+    margin-right: 4px;
+}
+
+header .top .column-2 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+header .top .column-2 .social-link {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+header .top .column-2 .social-link span {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    transition: width .4s ease-in-out;
+}
+header .top .column-2 .email.social-link:hover span {
+    width: 120px;
+}
+header .top .column-2 .telegram.social-link:hover span {
+    width: 70px;
+}
+header .top .column-2 .whatsapp.social-link:hover span {
+    width: 70px;
+}
+
+header .top .column-2 .bi {
+    color: #666;
+    font-size: 18px;
+    /*margin-right: 4px;*/
+}
+
+header .section-banner {
+    background: #000 url("/img/banner.jpg") no-repeat;
+    background-size: cover;
+    flex-grow: 1;
+    background-position-y: -100px;
+    position: relative;
+    color: #fff;
+}
+
+header .overfill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.70);
+    width: 100%;
+    height: 100%;
+}
+
+header .section-banner .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header .section-banner .logo {
+    /*width: 300px;*/
+    /*height: 300px;*/
+    /*overflow: hidden;*/
+}
+
+header .section-banner .logo img {
+    /*transform: translate(-35%, -20%);*/
+}
+
+header .section-banner .row-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header .section-banner .menu {
+    margin-top: 30px;
+}
+
+header .section-banner .menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    column-gap: 20px;
+}
+
+header .section-banner .row-2 {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .section-banner .row-2 .title {
+    display: flex;
+}
+
+header .call-me-form {
+    background: #fff;
+    border-radius: 8px;
+    color: #333;
+    border: 1px solid #f5f5f5;
+    padding: 30px;
+    width: 400px;
+}
+
+header .call-me-form button {
+    color: #fff;
+    background-color: #ff841f;
+    border-color: #ff841f;
+    border-radius: 20px;
+    height: 40px;
+    padding: 0 24px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+    transition: all .2s ease-in-out;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+header .call-me-form button:hover {
+    background-color: #ff841f;
+    border-color: #ff841f;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+    opacity: .8;
+}
+
+header .call-me-form input {
+    width: 100%;
+    padding: 8px 10px;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    margin-bottom: 14px;
+}
+
+
+.section-1 {
+    margin-bottom: 1000px;
+}
+
+
+
+
+
+
+
+
+
+
+
