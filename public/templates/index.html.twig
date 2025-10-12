@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
 {#    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">#}
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/podkova.css" type="text/css" />
+    <link rel="stylesheet" href="/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
 </head>
 <body>
 <header>
@@ -18,14 +20,14 @@
         <div class="container">
             <div class="contact-info d-flex">
                 <div class="column-1">
-                    <span>
+                    <a href="tel:+74957252525">
                         <i class="bi bi-telephone-fill"></i> <span>+7 (495) 725 25 25</span>
-                    </span>
-                    <span>
-                        <i class="bi bi-geo-alt-fill"></i> <span>ул Тверская, 17, офис 738</span>
-                    </span>
+                    </a>
+                    <a href="#contactinfo">
+                        <i class="bi bi-geo-alt-fill"></i> <span>г. Балашиха МО, Добросельская ул., д. 10, пом. 20</span>
+                    </a>
                 </div>
-                <div class="column-2">
+                <div class="column-2 d-none d-md-flex">
                     <a class="social-link email" href="mailto:mmt.msk@mail.ru">
                         <i class="bi bi-envelope"></i>
                         <span>mmt.msk@mail.ru</span>
@@ -48,14 +50,14 @@
 
         <div class="container">
             <div class="row-1">
-                <div class="logo">
+{#                <div class="logo">#}
 {#                    <img src="/img/logo.svg" />#}
-                </div>
+{#                </div>#}
                 <div class="menu">
                     <ul>
                         <li><a href="#weoffer">Продукция</a></li>
-                        <li>О компании</li>
-                        <li>Контакты</li>
+                        <li><a href="#aboutus">О компании</a></li>
+                        <li><a href="#contactinfo">Контакты</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,16 +70,17 @@
 {#                </div>#}
                 <div class="call-me-form">
                     <h2>Обратный звонок</h2>
-                    <p>Отправьте заявку и мы перезвоним в течении 30 мин.</p>
-                    <div>
-                        <input type="text" name="name" autocomplete="on" placeholder="Имя" />
-                    </div>
-                    <div>
-                        <input type="text" name="phone" autocomplete="on" placeholder="Телефон" />
-                    </div>
-                    <p>Отправляя данную форму, вы соглашаетесь c Политикой конфиденциальности</p>
-                    <button type="submit" class="btn btn-secondary">Отправить</button>
-
+                    <p>Отправьте заявку и мы перезвоним в течение 30 мин.</p>
+                    <form action="" method="get">
+                        <div>
+                            <input type="text" name="name" autocomplete="on" placeholder="Имя" />
+                        </div>
+                        <div>
+                            <input type="text" name="phone" autocomplete="on" placeholder="Телефон" />
+                        </div>
+                        <p class="politics"><small>Отправляя данную форму, вы соглашаетесь c <a href="">Политикой конфиденциальности</a></small></p>
+                        <button type="submit" class="btn btn-secondary">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -88,12 +91,213 @@
         <div class="container">
             <h2>Мы предлагаем</h2>
 
+            <ul>
+                <li>
+                    <a href="" style="background-image: url('/img/prod1.jpg')">
+                        <div class="overlay">
+                            <div class="text-overlay">
+                                <div class="text-overlay-title">
+                                    <h3>Лист стальной</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" style="background-image: url('/img/prod2.jpg')">
+                        <div class="overlay">
+                            <div class="text-overlay">
+                                <div class="text-overlay-title">
+                                    <h3>Арматура строительная</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" style="background-image: url('/img/prod3.jpg')">
+                        <div class="overlay">
+                            <div class="text-overlay">
+                                <div class="text-overlay-title">
+                                    <h3>Труба стальная</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" style="background-image: url('/img/prod4.jpg')">
+                        <div class="overlay">
+                            <div class="text-overlay">
+                                <div class="text-overlay-title">
+                                    <h3>Уголок стальной</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" style="background-image: url('/img/prod5.jpg')">
+                        <div class="overlay">
+                            <div class="text-overlay">
+                                <div class="text-overlay-title">
+                                    <h3>Балка стальная</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" style="background-image: url('/img/prod6.jpg')">
+                        <div class="overlay">
+                            <div class="text-overlay">
+                                <div class="text-overlay-title">
+                                    <h3>Швеллер стальной</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 
+
+
+
+
+    <div class="section-2 d-none d-md-block">
+        <div class="container clearfix">
+            <h2>Мы гарантируем</h2>
+
+            <div class="d-flex">
+                <div class="feature-box fbox-center fbox-border fbox-effect noborder">
+                        <div class="fbox-icon">
+                            <i class="bi bi-check"></i>
+                        </div>
+                        <h3>Широкий ассортимент продукции</h3>
+                </div>
+                <div class="feature-box fbox-center fbox-border fbox-effect noborder">
+                        <div class="fbox-icon">
+                            <i class="bi bi-check"></i>
+                        </div>
+                        <h3>Любые объемы в кратчайшие сроки</h3>
+                </div>
+                <div class="feature-box fbox-center fbox-border fbox-effect noborder">
+                        <div class="fbox-icon">
+                            <i class="bi bi-check"></i>
+                        </div>
+                        <h3>Индивидуальный подход и изделия на заказ</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="section-3" id="aboutus">
+        <div class="dark-bg">
+            <div class="container clearfix">
+                    <h2>О компании</h2>
+                    <p>Текст о компании – это идеальная возможность для отстройки от конкурентов. Нужно оперировать фактами.
+                        Пусть их будет немного, но именно они будут демонстрировать уникальность вашей компании.</p>
+                <p class="mb-0">
+                        Шаблон написания текста о компании:<br>
+                        чем занимаемся; что у нас получается лучше всего; примеры наших работ; в чём отличие компании; наша команда в лицах; наша компания в цифрах; что о нас говорят клиенты; какие гарантии мы даём.
+                    </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="section-4" id="contactinfo">
+        <h2>Наш адрес</h2>
+        <p>г. Балашиха, Добросельская ул., д. 10, пом. 20</p>
+        <div class="map">
+            <script type="text/javascript" charset="utf-8"
+                    async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A82229c4cb09a871aac99e574f0759d108465b0a1e9d9f1b034729db4903d4a1c&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true">
+            </script>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="section-5">
+        <div class="container">
+            <div class="flex d-flex">
+                <div class="column column-1">
+                    <h3>Реквизиты</h3>
+
+                    <p>ООО «МОСМЕТТОРГ»</p>
+                        <p>Адрес: 143903 г. Балашиха, Добросельская
+                            ул. д.10, пом.20</p>
+                        <p>ИНН 5001134380<br>
+                        КПП 500101001<br>
+                            ОГРН 1205000048164</p>
+                        <p>Генеральный директор: Долгалёва А. В.</p>
+                </div>
+                <div class="column column-2 call-me-form">
+                    <h3>Обратная связь</h3>
+
+                    <p>Отправьте заявку и наши менеджеры свяжутся с вами в течение 30 мин.</p>
+                    <form action="" method="get">
+                        <div>
+                            <input type="text" name="name" autocomplete="on" placeholder="Имя" />
+                        </div>
+                        <div>
+                            <input type="text" name="phone" autocomplete="on" placeholder="Телефон" />
+                        </div>
+                        <p class="politics"><small>Отправляя данную форму, вы соглашаетесь c <a href=""><a href="">Политикой конфиденциальности</a></a></small></p>
+                        <p>
+                            <button type="submit" class="btn btn-secondary">Отправить</button>
+                        </p>
+                    </form>
+                </div>
+                <div class="column column-3">
+                    <h3>Контакты</h3>
+
+                    <p>
+                        <a href="tel:+74957252525">
+                            <i class="bi bi-telephone-fill"></i> <span>+7 (495) 725 25 25</span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#contactinfo">
+                            <i class="bi bi-geo-alt-fill"></i> <span>г. Балашиха МО, Добросельская ул., д. 10, пом. 20</span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:mmt.msk@mail.ru">
+                            <i class="bi bi-envelope"></i> <span>mmt.msk@mail.ru</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </main>
 <footer>
-
+    <div class="container d-flex">
+        <div>ООО «МОСМЕТТОРГ» © 2025</div>
+        <div>
+            <a class="social-link telegram" href="https://t.me/VERTOLET_sale" target="_blank">
+                <i class="bi bi-telegram"></i>
+            </a>
+            <a class="social-link whatsapp" href="https://api.whatsapp.com/send?phone=79261872540" target="_blank">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
+    </div>
 </footer>
 </body>
 <script>
