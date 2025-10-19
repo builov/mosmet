@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
 </head>
 <body>
-<header>
+<header id="top">
     <div class="top">
         <div class="container">
             <div class="contact-info d-flex">
@@ -65,13 +65,10 @@
                 <div class="logo">
                     <img src="/img/logo2.svg" />
                 </div>
-{#                <div class="title">#}
-{#                    МОСМЕТТОРГ#}
-{#                </div>#}
-                <div class="call-me-form">
+                <div class="call-me-form d-none d-md-block">
                     <h2>Обратный звонок</h2>
                     <p>Отправьте заявку и мы перезвоним в течение 30 мин.</p>
-                    <form action="" method="get">
+                    <form action="" method="post" id="call-me-form">
                         <div>
                             <input type="text" name="name" autocomplete="on" placeholder="Имя" />
                         </div>
@@ -216,8 +213,10 @@
 
 
     <div class="section-4" id="contactinfo">
+        <div class="container">
         <h2>Наш адрес</h2>
-        <p>г. Балашиха, Добросельская ул., д. 10, пом. 20</p>
+        <p>г. Балашиха, Добросельская ул., д. 10, пом.&nbsp;20</p>
+        </div>
         <div class="map">
             <script type="text/javascript" charset="utf-8"
                     async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A82229c4cb09a871aac99e574f0759d108465b0a1e9d9f1b034729db4903d4a1c&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true">
@@ -247,7 +246,7 @@
                     <h3>Обратная связь</h3>
 
                     <p>Отправьте заявку и наши менеджеры свяжутся с вами в течение 30 мин.</p>
-                    <form action="" method="get">
+                    <form action="" method="post" id="contact-form">
                         <div>
                             <input type="text" name="name" autocomplete="on" placeholder="Имя" />
                         </div>
@@ -299,21 +298,64 @@
         </div>
     </div>
 </footer>
+
+<a href="#top" id="gotoTop" class="bi bi-chevron-up"></a>
+
 </body>
-<script>
-    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //     anchor.addEventListener('click', function (e) {
-    //         e.preventDefault(); // Отменяем стандартное поведение ссылки
-    //
-    //         const targetId = this.getAttribute('href').substring(1); // Получаем ID якоря
-    //         const targetElement = document.getElementById(targetId); // Находим элемент
-    //
-    //         if (targetElement) {
-    //             targetElement.scrollIntoView({
-    //                 behavior: 'smooth' // Включаем плавное перемещение
-    //             });
-    //         }
-    //     });
-    // });
+<script type='text/javascript'>
+    /**
+     * Отправка формы обратной связи
+     * @param e
+     * @returns {Promise<void>}
+     */
+    document.getElementById("contact-form").addEventListener('submit', sendEmail);
+    document.getElementById("call-me-form").addEventListener('submit', sendEmail);
+
+    async function sendEmail(e) {
+        e.preventDefault();
+
+        console.log('text');
+
+        let data = new FormData(e.target);
+        data.append('xhr', 'xhr');
+
+        let response = await fetch('/', {
+            method: 'POST',
+            body: data
+        });
+
+        let result = await response.text();
+
+        console.log('Ответ: ', result);
+
+        e.target.reset();
+
+        e.target.insertAdjacentHTML('afterbegin', result);
+    }
+
+
+    /**
+     * стрелка вверх
+     */
+    showHideArrow();
+
+    window.addEventListener('scroll', function() {
+        showHideArrow();
+    });
+
+    function showHideArrow() {
+        if (window.scrollY > 100) {
+            document.getElementById('gotoTop').style.display = 'block';
+        } else {
+            document.getElementById('gotoTop').style.display = 'none';
+        }
+    }
+
+
+
+    /**
+     * Вызов модального окна с формой обратной связи: см: https://vertolet.company/
+     */
+
 </script>
 </html>
